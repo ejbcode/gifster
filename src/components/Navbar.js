@@ -1,7 +1,12 @@
 import React from "react";
+import styled from "styled-components";
+
+const Div = styled.div`
+  font-size: 5rem;
+`;
 
 const Navbar = () => {
-  return <div>logo</div>;
+  return <Div>logo</Div>;
 };
 
 export default Navbar;

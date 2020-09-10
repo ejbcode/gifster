@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import Search from "./Search";
+import ListOfKeywords from "./ListOfKeywords";
 
 const Main = () => {
-  return <div>main</div>;
+  const [keywords, setKeywords] = useState(["arriba", "abajo", "derecha"]);
+  return (
+    <main>
+      <Search setKeywords={setKeywords} />
+      <ListOfKeywords keywords={keywords} />
+    </main>
+  );
 };
 
 export default Main;
