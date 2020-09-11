@@ -18,7 +18,6 @@ const Form = styled.form`
 
   .searchbtn {
     background: ${({ theme }) => theme.colorSecundary};
-
     width: 15%;
     border-radius: 0 5px 5px 0;
     position: relative;

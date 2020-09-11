@@ -19,6 +19,7 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Open Sans', sans-serif;
     max-width: 1080px;
     margin: 0 auto;
+    padding:1rem;
     font-size: 1.6rem;
     line-height: 1.5;
   }

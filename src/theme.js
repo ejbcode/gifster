@@ -1,7 +1,7 @@
 export const theme = {
   colorBackground: "#1c1c1c",
-  colorPrimary: "#fff",
-  colorSecundary: "#6828fc",
+  colorPrimary: "#e3e3e3",
+  colorSecundary: "#9A43B1",
 };
 
 export const breakpoints = {
