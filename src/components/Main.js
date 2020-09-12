@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Search from "./Search";
 import ListOfKeywords from "./ListOfKeywords";
-import ListOfImages from "./ListOfImages";
+import ImageSection from "./ImageSection";
 
 const Main = () => {
   const [keywords, setKeywords] = useState(["arriba", "abajo", "derecha"]);
@@ -9,8 +9,7 @@ const Main = () => {
     <main>
       <Search setKeywords={setKeywords} />
       <ListOfKeywords keywords={keywords} />
-      <ListOfImages />
-      <ListOfImages />
+      <ImageSection />
     </main>
   );
 };

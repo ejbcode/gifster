@@ -36,7 +36,7 @@ const Form = styled.form`
 `;
 
 const Search = () => {
-  const { setKeywords } = useContext(Data);
+  const { setKeywords, setLoading } = useContext(Data);
 
   const [value, setValue] = useState("");
   const handleChange = (event) => {
@@ -46,6 +46,7 @@ const Search = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (value.trim() === "") return;
+    setLoading(true);
     setKeywords((key) => [value, ...key]);
     setValue("");
   };
