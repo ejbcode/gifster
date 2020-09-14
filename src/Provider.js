@@ -3,7 +3,7 @@ import React, { createContext, useState } from "react";
 export const Data = createContext({});
 
 const Provider = ({ children }) => {
-  const [keywords, setKeywords] = useState([]);
+  const [keywords, setKeywords] = useState(["trending"]);
 
   const [loading, setLoading] = useState(false);
 

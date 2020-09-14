@@ -7,8 +7,8 @@ const ListOfKeywords = () => {
   return (
     <div>
       <ol>
-        {keywords.map((item) => {
-          return <Keyword item={item} />;
+        {keywords.map((keyword) => {
+          return <Keyword keyword={keyword} />;
         })}
       </ol>
     </div>

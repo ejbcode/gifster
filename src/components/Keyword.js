@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Data } from "../Provider";
 import styled from "styled-components";
 
 const List = styled.li`
@@ -17,14 +18,27 @@ const List = styled.li`
     top: 0;
     right: 2px;
     font-size: 1.2rem;
+    cursor: pointer;
+  }
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.colorPrimary};
   }
 `;
 
-const Keyword = ({ item }) => {
+const Keyword = ({ keyword }) => {
+  const { keywords, setKeywords } = useContext(Data);
+  const handleDeleteClick = () => {
+    // setKeywords((keywords) => keywords.filter((key) => key !== keyword));
+    setKeywords(keywords.filter((key) => key !== keyword));
+  };
+
   return (
     <List>
-      <p>{item}</p>
-      <i class="fas fa-times"></i>
+      <p>
+        <a href={`#${keyword}`}>{keyword}</a>
+      </p>
+      <i className="fas fa-times" onClick={handleDeleteClick}></i>
     </List>
   );
 };
