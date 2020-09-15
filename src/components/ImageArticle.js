@@ -44,10 +44,10 @@ const ImageArticle = ({ keyword }) => {
   const { loading, setLoading } = useContext(Data);
   const [image, setImage] = useState([]);
 
-  // useEffect(() => {
-  //   getDataFromAi();
-  //   // eslint-disable-next-line
-  // }, [keyword]);
+  useEffect(() => {
+    getDataFromAi();
+    // eslint-disable-next-line
+  }, [keyword]);
 
   const getDataFromAi = async () => {
     const BASE_TYPE = keyword === "trending" ? "trending" : "search";
