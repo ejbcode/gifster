@@ -2,11 +2,19 @@ import React from "react";
 import styled from "styled-components";
 
 const Div = styled.div`
-  font-size: 5rem;
+  p {
+    font-size: 5rem;
+  background: -webkit-linear-gradient(pink, purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 
 const Navbar = () => {
-  return <Div>logo</Div>;
+  return (
+    <Div>
+      <p>Gifster</p>
+    </Div>
+  );
 };
 
 export default Navbar;

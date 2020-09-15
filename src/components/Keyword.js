@@ -6,6 +6,7 @@ const List = styled.li`
   display: inline-block;
   padding: 0.5rem 1.5rem;
   margin: 1rem 0.5rem;
+  border-radius: 5px;
   position: relative;
   border: solid 1px ${({ theme }) => theme.colorSecundary};
 

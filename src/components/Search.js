@@ -36,7 +36,7 @@ const Form = styled.form`
 `;
 
 const Search = () => {
-  const { setKeywords, setLoading } = useContext(Data);
+  const { loading, setKeywords, setLoading } = useContext(Data);
 
   const [value, setValue] = useState("");
   const handleChange = (event) => {
@@ -49,6 +49,7 @@ const Search = () => {
     setLoading(true);
     setKeywords((key) => [value, ...key]);
     setValue("");
+    console.log(loading);
   };
 
   return (

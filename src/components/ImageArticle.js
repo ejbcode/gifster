@@ -1,26 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import ImageCard from "./ImageCard";
-import styled from "styled-components";
 import { Data } from "../Provider";
+import Loading from "./Loading";
+import styled from "styled-components";
 import axios from "axios";
 
-const Article = styled.article`
-  min-height: 200px;
-  border: red solid 1px;
-  overflow: auto;
-  h2 {
-    width: 100%;
-    padding-left: 1rem;
-    border-bottom: 1px solid #000;
-    line-height: 0.1em;
-    margin: 2rem auto;
-  }
+const Title = styled.h2`
+  width: 100%;
+  padding-left: 1rem;
+  border-bottom: 1px solid ${({ theme }) => theme.colorPrimary};
+  line-height: 0.1em;
+  margin: 1rem auto;
 
   span {
     background: ${({ theme }) => theme.colorBackground};
     padding: 0 1rem;
   }
+`;
 
+const Article = styled.article`
+  min-height: 200px;
+  overflow: auto;
+
+  overflow-x: scroll;
+  white-space: nowrap;
+  margin-bottom: 6rem;
   div {
     display: flex;
   }
@@ -35,8 +39,8 @@ const Article = styled.article`
   }
 `;
 const ImageArticle = ({ keyword }) => {
-  const [loading, setLoading] = useState(false);
-
+  // const [loading, setLoading] = useState(false);
+  const { loading, setLoading } = useContext(Data);
   const [image, setImage] = useState([]);
 
   useEffect(() => {
@@ -65,16 +69,19 @@ const ImageArticle = ({ keyword }) => {
   };
 
   return (
-    <Article id={keyword}>
-      <h2>
+    <>
+      <Title>
         <span>{keyword}</span>
-      </h2>
-      <div>
-        {image.map((img) => (
-          <ImageCard key={img.id} {...img} />
-        ))}
-      </div>
-    </Article>
+      </Title>
+      <Article id={keyword}>
+        {loading && <Loading size={"large"} speed={10.9} />}
+        <div>
+          {image.map((img) => (
+            <ImageCard key={img.id} {...img} />
+          ))}
+        </div>
+      </Article>
+    </>
   );
 };
 
