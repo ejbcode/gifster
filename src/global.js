@@ -1,6 +1,12 @@
 import { createGlobalStyle } from "styled-components";
+import LedTTF from "./fonts/Led.ttf";
 
 export const GlobalStyles = createGlobalStyle`
+@font-face {
+  font-family: 'Led';
+  src: url(${LedTTF}) format('truetype');
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
   *, *::after, *::before {
     margin:0;

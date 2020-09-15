@@ -5,6 +5,7 @@ import { Data } from "../Provider";
 const Form = styled.form`
   background: rgba(0, 0, 0, 0.6);
   width: 100%;
+  z-index: 399;
   padding: 15px;
   display: flex;
   border-radius: 5px;
@@ -14,6 +15,7 @@ const Form = styled.form`
     border: none;
     font-weight: bold;
     border-radius: 5px 0 0 5px;
+    box-shadow: 0 0 6px ${({ theme }) => theme.colorSecundary};
   }
 
   .searchbtn {
@@ -23,6 +25,10 @@ const Form = styled.form`
     position: relative;
     cursor: pointer;
     border: none;
+    background-color: #fc00ff;
+    background-image: linear-gradient(180deg, #fc00ff 2%, #0dd2d4 93%);
+
+    box-shadow: 0 0 6px ${({ theme }) => theme.colorSecundary};
   }
 
   .fas {

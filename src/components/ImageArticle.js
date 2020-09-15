@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
 import ImageCard from "./ImageCard";
 import { Data } from "../Provider";
-import Loading from "./Loading";
+import Loader from "./Loader";
+
 import styled from "styled-components";
 import axios from "axios";
 
@@ -43,10 +44,10 @@ const ImageArticle = ({ keyword }) => {
   const { loading, setLoading } = useContext(Data);
   const [image, setImage] = useState([]);
 
-  useEffect(() => {
-    getDataFromAi();
-    // eslint-disable-next-line
-  }, [keyword]);
+  // useEffect(() => {
+  //   getDataFromAi();
+  //   // eslint-disable-next-line
+  // }, [keyword]);
 
   const getDataFromAi = async () => {
     const BASE_TYPE = keyword === "trending" ? "trending" : "search";
@@ -74,7 +75,7 @@ const ImageArticle = ({ keyword }) => {
         <span>{keyword}</span>
       </Title>
       <Article id={keyword}>
-        {loading && <Loading size={"large"} speed={10.9} />}
+        {loading && <Loader />}
         <div>
           {image.map((img) => (
             <ImageCard key={img.id} {...img} />
