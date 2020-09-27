@@ -64,7 +64,6 @@ const ImageArticle = ({ keyword }) => {
     const BASE_TYPE = keyword === "trending" ? "trending" : "search";
     let BASE_URL = "https://api.giphy.com/v1/gifs";
     const API_KEY = process.env.REACT_APP_API;
-    console.log(process.env.REACT_APP_API);
     const URL = `${BASE_URL}/${BASE_TYPE}?api_key=${API_KEY}&limit=10&q=${encodeURI(
       keyword
     )}`;
