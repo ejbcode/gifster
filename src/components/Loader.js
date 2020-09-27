@@ -12,6 +12,7 @@ const LoaderStyled = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 200px;
   }
   ul li {
     list-style: none;

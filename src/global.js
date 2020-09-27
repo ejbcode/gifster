@@ -30,6 +30,9 @@ export const GlobalStyles = createGlobalStyle`
     line-height: 1.5;
   }
 
+  a{text-decoration:none;
+  color:white;text-align:center}
+
 `;
 
 export default GlobalStyles;
